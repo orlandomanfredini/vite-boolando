@@ -9,7 +9,7 @@ export default {
                     prezzoScontato: 20.90,
                     sconto: 30,
                     modello: 'Levis',
-                    img: '../public/img/1.webp'
+                    img: '../public/img/1.webp',
 
                 },
                 {
@@ -18,7 +18,7 @@ export default {
                     prezzoScontato: 30.90,
                     sconto: 50,
                     modello: 'Tevis',
-                    img: '../public/img/2.webp'
+                    img: '../public/img/2.webp',
 
                 },
                 {
@@ -27,7 +27,7 @@ export default {
                     prezzoScontato: 20.90,
                     sconto: 30,
                     modello: 'Levis',
-                    img: '../public/img/3.webp'
+                    img: '../public/img/3.webp',
 
                 },
                 {
@@ -36,7 +36,7 @@ export default {
                     prezzoScontato: 20.90,
                     sconto: 30,
                     modello: 'Levis',
-                    img: '../public/img/4.webp'
+                    img: '../public/img/4.webp',
 
                 },
                 {
@@ -45,7 +45,7 @@ export default {
                     prezzoScontato: 20.90,
                     sconto: 30,
                     modello: 'Levis',
-                    img: '../public/img/5.webp'
+                    img: '../public/img/5.webp',
 
                 },
                 {
@@ -54,7 +54,7 @@ export default {
                     prezzoScontato: 20.90,
                     sconto: 30,
                     modello: 'Levis',
-                    img: '../public/img/6.webp'
+                    img: '../public/img/6.webp',
 
                 },
             ]
@@ -73,8 +73,21 @@ export default {
             </div>
             
             <div class="row">
-                <div class="col-4">
-                    <div class="card"></div>
+                <div class="col-4" v-for="product in products">
+                    <div class="card">
+                        <div class="card-img">
+                            <img :src="product.img">
+                            <div class="discount">{{ product.sconto }} %</div>
+                        </div>
+                        <div class="body-card">
+                            <span>{{ product.nome }}</span>
+                            <span class="brand">{{ product.modello }}</span>
+                            <div class="price">
+                                <span>{{ product.prezzoScontato.toFixed(2) }}€</span>
+                                <span class="price-original">{{ product.prezzo.toFixed(2) }}€</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
@@ -82,6 +95,6 @@ export default {
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../assets/scss/content.scss'
 </style>
