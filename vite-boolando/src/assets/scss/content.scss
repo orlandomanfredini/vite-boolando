@@ -1,0 +1,19 @@
+.container-sm{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-header{
+    text-align: center;
+}
+
+.col-4{
+    width: calc(4 * (100% / 12));
+    border: 1px solid black;
+    
+}
+
+.card{
+    padding: 10px;
+    border-radius: 8px;
+}
