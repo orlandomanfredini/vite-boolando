@@ -7,8 +7,13 @@
     text-align: center;
 }
 
+.row-main{
+    padding:20px 0 40px 0;
+}
+
 .col-4{
     width: calc(100% / 3 - 20px);
+    padding-top: 15px;
     
     
 }
@@ -38,6 +43,23 @@
     border-radius: 10px;
 }
 
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: ease-in-out 500ms;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
 .body-card{
     display: flex;
     flex-direction: column;
@@ -60,3 +82,4 @@
     margin-left: 6px;
     color: rgb(202, 69, 69);
 }
+

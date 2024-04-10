@@ -10,6 +10,7 @@ export default {
                     sconto: 30,
                     modello: 'Levis',
                     img: '../public/img/1.webp',
+                    overlayImg: '../public/img/1b.webp',
 
                 },
                 {
@@ -19,6 +20,7 @@ export default {
                     sconto: 50,
                     modello: 'Tevis',
                     img: '../public/img/2.webp',
+                    overlayImg: '../public/img/2b.webp',
 
                 },
                 {
@@ -28,6 +30,7 @@ export default {
                     sconto: 30,
                     modello: 'Levis',
                     img: '../public/img/3.webp',
+                    overlayImg: '../public/img/3b.webp',
 
                 },
                 {
@@ -37,6 +40,7 @@ export default {
                     sconto: 30,
                     modello: 'Levis',
                     img: '../public/img/4.webp',
+                    overlayImg: '../public/img/4b.webp',
 
                 },
                 {
@@ -46,6 +50,7 @@ export default {
                     sconto: 30,
                     modello: 'Levis',
                     img: '../public/img/5.webp',
+                    overlayImg: '../public/img/5b.webp',
 
                 },
                 {
@@ -55,6 +60,7 @@ export default {
                     sconto: 30,
                     modello: 'Levis',
                     img: '../public/img/6.webp',
+                    overlayImg: '../public/img/6b.webp',
 
                 },
             ]
@@ -72,12 +78,16 @@ export default {
                 <p>Scopri le ultime novità del mese, per te ogni giorno nuovi tantissimi sconti</p>
             </div>
             
-            <div class="row">
+            <div class="row row-main">
                 <div class="col-4" v-for="product in products">
                     <div class="card">
                         <div class="card-img">
                             <img :src="product.img">
                             <div class="discount">{{ product.sconto }} %</div>
+                            <div class="overlay">
+                                <img class="overlay-img" :src="product.overlayImg" alt="">
+                                <div class="discount">{{ product.sconto }} %</div>
+                            </div>
                         </div>
                         <div class="body-card">
                             <span>{{ product.nome }}</span>

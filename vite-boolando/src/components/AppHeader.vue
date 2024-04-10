@@ -59,6 +59,6 @@ export default {
     </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './src/assets/scss/header'
 </style>
