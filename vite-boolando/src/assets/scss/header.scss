@@ -1,0 +1,24 @@
+header{
+    background-color: orange;
+    height: 80px;
+}
+
+.col-4{
+    width: calc(100% / 3 - 10px);
+    padding: 10px;
+}
+
+
+
+.link-header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img{
+    max-width: 100px;
+}
+
