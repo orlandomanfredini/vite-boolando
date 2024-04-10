@@ -1,6 +1,6 @@
 header{
     background-color: orange;
-    height: 56px;
+    
    
 }
 
@@ -10,7 +10,7 @@ header{
 
 .col-4{
     width: calc(100% / 2 - 120px);
-    padding: 10px;
+    padding: 30px;
 }
 
 
@@ -29,9 +29,15 @@ header{
 
 .icon-header{
     display: flex;
-    justify-content: space-around;
+    gap: 35px;
     align-items: center;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
+
+}
+
+.icon-header li img{
+    max-width: 25px;
 }
 
