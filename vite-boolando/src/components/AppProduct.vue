@@ -9,6 +9,14 @@ export default {
 
         }
     },
+
+    methods: {
+        calculatePrice(price, discount){
+            let result = price - (price * parseInt(discount) / 100) 
+            return result.toFixed(2)
+
+        }
+    }
     
 }
 </script>
@@ -33,8 +41,8 @@ export default {
             <span>{{ singleProduct.name }}</span>
             <span class="brand">{{ singleProduct.brand }}</span>
             <div class="price">
-                <span>{{ singleProduct.price }}€</span>
-                <span class="price-original">€</span>
+                <span>{{calculatePrice(singleProduct.price, singleProduct.discount)}}€</span>
+                <span class="price-original">{{ singleProduct.price }}€</span>
             </div>
         </div>
     </div>
