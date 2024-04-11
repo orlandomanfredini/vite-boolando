@@ -18,17 +18,32 @@
 .card-img .discount{
     position: absolute;
     left: 10px;
-    bottom: 20px;
+    bottom: 30px;
     background-color: rgb(68, 174, 68);
     padding: 5px;
     border-radius: 8px;
     color: white;
 }
 
+.card-img .sustenible{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgb(209, 83, 74);
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+    opacity: 1;
+}
+
 .card-img img{
     max-width: 100%;
+    max-height: 100%;
     border-radius: 10px;
 }
+
+
+
 
 .overlay{
     display: flex;

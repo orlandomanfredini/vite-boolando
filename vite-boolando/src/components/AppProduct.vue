@@ -4,11 +4,12 @@ export default {
 
 
     data(){
-
         return {
+            
 
         }
-    }
+    },
+    
 }
 </script>
 
@@ -17,10 +18,15 @@ export default {
     <div class="card">
         <div class="card-img">
             <img :src="singleProduct.frontImage">
-            <!-- <div class="discount">{{ singleProduct.badges[1].value }} %</div> -->
+            <div  v-for="(info, i) in singleProduct.badges" class="info">
+                <div :class="info.type === 'discount' ? 'discount' : 'sustenible' ">{{ info.value }}</div>
+            </div>
+            
             <div class="overlay">
                 <img class="overlay-img" :src="singleProduct.backImage" alt="">
-                <!-- <div class="discount">{{ singleProduct.sconto }} %</div> -->
+                <div  v-for="(info, i) in singleProduct.badges" class="info">
+                    <div :class="info.type === 'discount' ? 'discount' : 'sustenible' ">{{ info.value }}</div>
+                </div>
             </div>
         </div>
         <div class="body-card">
@@ -28,7 +34,7 @@ export default {
             <span class="brand">{{ singleProduct.brand }}</span>
             <div class="price">
                 <span>{{ singleProduct.price }}€</span>
-                <span class="price-original">{{ singleProduct.price}}€</span>
+                <span class="price-original">€</span>
             </div>
         </div>
     </div>
