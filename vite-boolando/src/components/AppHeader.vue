@@ -5,17 +5,17 @@ export default {
             currentElement: 0,
             iconsHeader: [
                 {
-                    icon: '../public/img/cuore.png'
+                    icon: '/img/cuore.png'
                 },
                 {
-                    icon: '../public/img/carrello.png'
+                    icon: '/img/carrello.png'
                 },
                 {
-                    icon: '../public/img/log.png'
+                    icon: '/img/log.png'
                 }
 
             ],
-            logo: '../public/img/boolean-logo.png',
+            logo: '/img/boolean-logo.png',
             linksHeader: [
                 {
                     name: 'Uomo',

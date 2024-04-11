@@ -1,23 +1,24 @@
 <script>
-import CardProduct from './CardProduct.vue';
-import storeProducts from '../assets/db 2.json';
+import AppProduct from './AppProduct.vue';
+import storeProducts from '../assets/db2.json';
 
 
 export default {
 
-    component: {
-        CardProduct,
+    components: {
+        AppProduct,
     },
 
 
 
     data(){
         return {
-            products: storeProducts.products,
-
-            
-
+            products:storeProducts.products,
         }
+        
+    },
+    mounted(){
+        console.log(this.products)
     }
 }
 </script>
@@ -31,12 +32,12 @@ export default {
             </div>
             
             <div class="row row-main">
-                <CardProduct v-for="(product, i) in products" :key="i" :singleProduct="product" />
+                <AppProduct v-for="(product, i) in products" :key="i" :singleProduct="product" />
             </div>
         </div>
     </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped >
 @use '../assets/scss/content.scss'
-</style>
+</style>./AppProduct.vue

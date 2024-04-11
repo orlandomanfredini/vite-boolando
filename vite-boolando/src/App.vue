@@ -9,6 +9,9 @@ export default {
     AppHeader,
     AppContent,
     AppFooter,
+  },
+  mounted() {
+    console.log("APP.vue")
   }
 }
 </script>
