@@ -49,7 +49,7 @@ export default {
                 </div>
                 <div class="col-4">
                     <ul class="icon-header">
-                        <li v-for="icon in iconsHeader">
+                        <li v-for="(icon, i) in iconsHeader" :key="i">
                             <img :src="icon.icon">
                         </li>
                     </ul>

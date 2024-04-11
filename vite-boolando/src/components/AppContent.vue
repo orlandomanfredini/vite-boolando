@@ -1,69 +1,21 @@
 <script>
+import CardProduct from './CardProduct.vue';
+import storeProducts from '../assets/db 2.json';
+
+
 export default {
+
+    component: {
+        CardProduct,
+    },
+
+
+
     data(){
         return {
-            products: [
-                {
-                    nome: 'T-shirt estiva',
-                    prezzo: 29.90,
-                    prezzoScontato: 20.90,
-                    sconto: 30,
-                    modello: 'Levis',
-                    img: '../public/img/1.webp',
-                    overlayImg: '../public/img/1b.webp',
+            products: storeProducts.products,
 
-                },
-                {
-                    nome: 'T-shirt UOMO',
-                    prezzo: 39.90,
-                    prezzoScontato: 30.90,
-                    sconto: 50,
-                    modello: 'Tevis',
-                    img: '../public/img/2.webp',
-                    overlayImg: '../public/img/2b.webp',
-
-                },
-                {
-                    nome: 'T-shirt estiva',
-                    prezzo: 29.90,
-                    prezzoScontato: 20.90,
-                    sconto: 30,
-                    modello: 'Levis',
-                    img: '../public/img/3.webp',
-                    overlayImg: '../public/img/3b.webp',
-
-                },
-                {
-                    nome: 'T-shirt estiva',
-                    prezzo: 29.90,
-                    prezzoScontato: 20.90,
-                    sconto: 30,
-                    modello: 'Levis',
-                    img: '../public/img/4.webp',
-                    overlayImg: '../public/img/4b.webp',
-
-                },
-                {
-                    nome: 'T-shirt estiva',
-                    prezzo: 29.90,
-                    prezzoScontato: 20.90,
-                    sconto: 30,
-                    modello: 'Levis',
-                    img: '../public/img/5.webp',
-                    overlayImg: '../public/img/5b.webp',
-
-                },
-                {
-                    nome: 'T-shirt estiva',
-                    prezzo: 29.90,
-                    prezzoScontato: 20.90,
-                    sconto: 30,
-                    modello: 'Levis',
-                    img: '../public/img/6.webp',
-                    overlayImg: '../public/img/6b.webp',
-
-                },
-            ]
+            
 
         }
     }
@@ -79,27 +31,7 @@ export default {
             </div>
             
             <div class="row row-main">
-                <div class="col-4" v-for="product in products">
-                    <div class="card">
-                        <div class="card-img">
-                            <img :src="product.img">
-                            <div class="discount">{{ product.sconto }} %</div>
-                            <div class="overlay">
-                                <img class="overlay-img" :src="product.overlayImg" alt="">
-                                <div class="discount">{{ product.sconto }} %</div>
-                            </div>
-                        </div>
-                        <div class="body-card">
-                            <span>{{ product.nome }}</span>
-                            <span class="brand">{{ product.modello }}</span>
-                            <div class="price">
-                                <span>{{ product.prezzoScontato.toFixed(2) }}€</span>
-                                <span class="price-original">{{ product.prezzo.toFixed(2) }}€</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+                <CardProduct v-for="(product, i) in products" :key="i" :singleProduct="product" />
             </div>
         </div>
     </main>
