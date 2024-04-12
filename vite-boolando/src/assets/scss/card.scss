@@ -18,7 +18,7 @@
 .card-img .discount{
     position: absolute;
     left: 10px;
-    bottom: 30px;
+    bottom: 10px;
     background-color: rgb(68, 174, 68);
     padding: 5px;
     border-radius: 8px;
@@ -62,6 +62,10 @@
     opacity: 1;
 }
 
+.info > *{
+    font-size: 13px;
+}
+
 .body-card{
     display: flex;
     flex-direction: column;
@@ -75,11 +79,11 @@
 }
 
 .price{
-    font-size: 14px;
     color: rgb(59, 154, 59);
 }
 
 .price-original{
+    
     text-decoration: line-through;
     margin-left: 6px;
     color: rgb(202, 69, 69);

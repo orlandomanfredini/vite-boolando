@@ -1,6 +1,7 @@
 <script>
 import AppProduct from './AppProduct.vue';
-import storeProducts from '../assets/db2.json';
+// import storeProducts from '../assets/db2.json';
+import {store} from './store.js'
 
 
 export default {
@@ -13,7 +14,7 @@ export default {
 
     data(){
         return {
-            products:storeProducts.products,
+            store,
         }
         
     },
@@ -35,7 +36,7 @@ export default {
             </div>
             
             <div class="row row-main">
-                <AppProduct v-for="(product, i) in products" :key="i" :singleProduct="product" />
+                <AppProduct v-for="(product, i) in store.products" :key="i" :singleProduct="product" />
             </div>
         </div>
     </main>
