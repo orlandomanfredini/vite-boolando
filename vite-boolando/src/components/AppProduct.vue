@@ -1,19 +1,18 @@
 <script>
+import {store} from '../store.js';
+
 export default {
-    props: ['singleProduct'],
-
-
     data(){
         return {
-            
+            store: store,
 
         }
     },
 
     methods: {
         calculatePrice(price, discount){
-            let result = price - (price * parseInt(discount) / 100) 
-            return result.toFixed(2)
+            let result = price - (price * parseInt(discount) / 100); 
+            return result
 
         }
     }
@@ -25,24 +24,24 @@ export default {
 <div class="col-4">
     <div class="card">
         <div class="card-img">
-            <img :src="singleProduct.frontImage">
-            <div  v-for="(info, i) in singleProduct.badges" class="info">
+            <img :src="store.products.frontImage">
+            <div  v-for="(info, i) in store.products" class="info" :key="i">
                 <div :class="info.type === 'discount' ? 'discount' : 'sustenible' ">{{ info.value }}</div>
             </div>
             
             <div class="overlay">
-                <img class="overlay-img" :src="singleProduct.backImage" alt="">
-                <div  v-for="(info, i) in singleProduct.badges" class="info">
+                <img class="overlay-img" :src="store.products.backImage" alt="">
+                <div  v-for="(info, i) in store.products.badges" class="info" :key="i">
                     <div :class="info.type === 'discount' ? 'discount' : 'sustenible' ">{{ info.value }}</div>
                 </div>
             </div>
         </div>
         <div class="body-card">
-            <span>{{ singleProduct.name }}</span>
-            <span class="brand">{{ singleProduct.brand }}</span>
+            <span>{{ store.products.name }}</span>
+            <span class="brand">{{ store.products.brand }}</span>
             <div class="price">
-                <span>{{calculatePrice(singleProduct.price, singleProduct.discount)}}€</span>
-                <span class="price-original">{{ singleProduct.price }}€</span>
+                <span>{{calculatePrice(store.products.price, store.products.discount)}}€</span>
+                <span class="price-original">{{ store.products.price }}€</span>
             </div>
         </div>
     </div>

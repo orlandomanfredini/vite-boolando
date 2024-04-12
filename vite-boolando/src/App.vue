@@ -11,7 +11,7 @@ export default {
     AppFooter,
   },
   mounted() {
-    console.log("APP.vue")
+    
   }
 }
 </script>
