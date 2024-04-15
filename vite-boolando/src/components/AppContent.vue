@@ -1,6 +1,6 @@
 <script>
 import AppProduct from './AppProduct.vue';
-// import storeProducts from '../assets/db2.json';
+import AppModal from './AppModal.vue';
 import {store} from '../store.js'
 
 
@@ -8,19 +8,20 @@ export default {
 
     components: {
         AppProduct,
+        AppModal,
     },
-
-
-
     data(){
         return {
             store : store,
+            isVisibleModal : false,
+            
         }
-        
     },
-    
-
-
+    methods:{
+        visibleModal(){
+           this.isVisibleModal = true;
+        }
+    },
     mounted(){
         console.log(this.store)
         
@@ -37,12 +38,15 @@ export default {
             </div>
             
             <div class="row row-main">
-                <AppProduct v-for="(product, i) in store.products" :key="i"/>
+                <AppProduct v-for="(product, i) in store.products" :key="i" :singleProduct="product" />
+                
             </div>
+            
         </div>
     </main>
 </template>
 
 <style lang="scss" scoped >
 @use '../assets/scss/content.scss'
-</style>./AppProduct.vue
+
+</style>
